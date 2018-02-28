@@ -39,14 +39,14 @@ plt.xticks(ind + width/2., categories)
 
 from pyspark.sql.functions import udf
 from pyspark.sql.types import StringType
- 
+n 
 binarize = lambda x: 'Negative' if x == 'Neutral' else x
  
 udfValueToCategory = udf(binarize, StringType())
 df = df.withColumn("binary_response", udfConvertResponse("feedback"))
 
 
-# preprocessing 
+# preprocessing data :
 
 cols_select = ['prod_price',
                'prod_feat_1',
